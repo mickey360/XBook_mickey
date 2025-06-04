@@ -6,11 +6,11 @@ import { ConvexProviderWithClerk } from "convex/react-clerk";
 import { ClerkProvider, SignIn, useAuth } from "@clerk/clerk-react";
 import { FullscreenLoader } from "./fullscreen-loader";
 
-const convex = new ConvexReactClient('https://quirky-crocodile-597.convex.cloud');
+const convex = new ConvexReactClient(process.env.NEXT_PUBLIC_CONVEX_URL!);
 
 export function ConvexClientProvider({ children }: { children: ReactNode }) {
     return (
-    <ClerkProvider publishableKey={'pk_test_dXNhYmxlLW11bGxldC05Mi5jbGVyay5hY2NvdW50cy5kZXYk'}>
+    <ClerkProvider publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY!}>
         <ConvexProviderWithClerk 
         useAuth={useAuth} 
         client={convex}

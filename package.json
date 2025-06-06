@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@clerk/nextjs": "^6.0.2",
+    "@clerk/nextjs": "6.0.2",
     "@hookform/resolvers": "^3.9.1",
     "@liveblocks/client": "^2.12.2",
     "@liveblocks/node": "^2.23.1",
@@ -90,7 +90,7 @@
     "sonner": "^2.0.3",
     "tailwind-merge": "^2.5.4",
     "tailwindcss-animate": "^1.0.7",
-    "tiptap-extension-resize-image": "^1.2.1",  
+    "tiptap-extension-resize-image": "^1.2.1",
     "typewriter-effect": "^2.21.0",
     "vaul": "^1.1.2",
     "y-protocols": "^1.0.6",

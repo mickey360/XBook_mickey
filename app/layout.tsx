@@ -9,6 +9,7 @@ import { Toaster } from "@/Components/ui/sonner";
 import "./globals.css";
 import "@liveblocks/react-ui/styles.css"
 import "@liveblocks/react-tiptap/styles.css"
+import { ClerkProvider } from "@clerk/nextjs";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -45,12 +46,14 @@ export default function RootLayout({
       <html lang="en">
         <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+          <ClerkProvider>
           <NuqsAdapter>
             <ConvexClientProvider>
               <Toaster />
                {children}
             </ConvexClientProvider>
           </NuqsAdapter>
+          </ClerkProvider>
         </body>
       </html>
   );

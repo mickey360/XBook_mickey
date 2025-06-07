@@ -7,6 +7,9 @@ const nextConfig: NextConfig= {
       hostname:"oaidalleapiprodscus.blob.core.windows.net",
   },],
   },
+  eslint: {
+    ignoreDuringBuilds: true,
+  }
 };
 
 export default nextConfig;

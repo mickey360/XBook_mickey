@@ -46,14 +46,12 @@ export default function RootLayout({
       <html lang="en">
         <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-          <ClerkProvider>
           <NuqsAdapter>
             <ConvexClientProvider>
               <Toaster />
                {children}
             </ConvexClientProvider>
           </NuqsAdapter>
-          </ClerkProvider>
         </body>
       </html>
   );

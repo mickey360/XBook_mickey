@@ -16,8 +16,8 @@ export const Inbox = () => {
     <ClientSideSuspense
       fallback={
         <>
-          <Button variant="ghost" size="icon" className="relative hover:bg-transparent focus:bg-transparent" disabled>
-            <BellIcon className="size-3 " />
+          <Button variant="ghost" size="icon" className="relative hover:bg-transparent focus:bg-transparent pl-2 pr-2" disabled>
+            <BellIcon className="size-5 " />
           </Button>
         </>
       }
@@ -33,8 +33,8 @@ const InboxMenu = () => {
     <>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <Button variant="ghost" size="icon" className=" hover:bg-transparent focus:bg-transparent relative">
-            <BellIcon className="size-3 " />
+          <Button variant="ghost" size="icon" className="hover:bg-transparent focus:bg-transparent pl-2 pr-2 relative">
+            <BellIcon className="size-5 " />
             {inboxNotifications.length > 0 && (
               <span className="absolute -top-1 -right-1 size-4 rounded-full bg-red-500 text-xs text-white flex items-center justify-center">
                 {inboxNotifications.length}

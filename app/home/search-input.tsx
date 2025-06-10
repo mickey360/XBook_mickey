@@ -43,7 +43,7 @@ export const SearchInput= () => {
                 size="icon" 
                 className="absolute hover:bg-gray-900 left-3 top-1/2 -translate-y-1/2 rounded-full" 
                 >
-                    <SearchIcon color="white" className="size-3 hover:bg-gray-900"/>  
+                    <SearchIcon color="white" className="size-5 hover:bg-gray-900"/>  
                      {/* [&_svg]:size-5  [&_svg]:size-5 focus-visible:shadow-[0_1px_1px_0_rgba(65,69,73,.3),0_1px_3px_1px_rgba(65,69,73,.15)] */}
                 </Button>
 
@@ -54,7 +54,7 @@ export const SearchInput= () => {
                  variant="ghost" 
                  size="icon" 
                  className="absolute hover:bg-gray-900 right-3 top-1/2 -translate-y-1/2  rounded-full" >
-                    <XIcon color="white" className="size-3 hover:bg-gray-900"/>
+                    <XIcon color="white" className="size-5 hover:bg-gray-900"/>
                  </Button>
                 )}
             </form>

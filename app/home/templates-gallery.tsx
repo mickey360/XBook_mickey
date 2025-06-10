@@ -1,6 +1,6 @@
 'use client';
 
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/Components/ui/carousel";
+import { Carousel, CarouselContent, CarouselItem} from "@/Components/ui/carousel";
 import { templates } from "@/constants/template";
 import { api } from "@/convex/_generated/api";
 import { cn } from "@/lib/utils";
@@ -57,8 +57,7 @@ import { toast } from "sonner";
                             </CarouselItem>
                         ))}
                     </CarouselContent>
-                    <CarouselPrevious />
-                    <CarouselNext />
+                    
                 </Carousel>
             </div>
         </div>

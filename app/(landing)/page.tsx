@@ -11,21 +11,21 @@ export default function LandingPage(){
 
       {/* Navbar */}
 
-      <nav className="sticky top-0 z-50 bg-gradient-to-r from-[#000000c4] to-[#07061db4] shadow-sm ">
+      <nav className="sticky top-0 z-50 border-b border-gray-800 bg-gradient-to-r from-[#000000c4] to-[#07061db4] shadow-sm ">
         <div className="max-w-auto mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16 items-center">
             <div className="flex items-center pl-3 mr-3">
             <Link href="/">
                 <Image src="/logo.svg" alt="logo" width={34} height={34} />
             </Link>
-              <span className="text-lg font-bold text-gray-200 pl-3 mt-1">NoteX</span>
+              <span className="text-lg font-bold text-gray-400 pl-3 mt-1">XBook</span>
             </div>
             <div className="hidden md:flex space-x-8">
-              <Link href="/" className="text-white hover:text-gray-500 transition-colors">Home</Link>
-              <Link href="/home" className="text-white hover:text-gray-500 transition-colors">Forum</Link>
-              <Link href="/home" className="text-white hover:text-gray-500 transition-colors">Editor</Link>
-              <Link href="/home" className="text-white hover:text-gray-500 transition-colors">Dashboard</Link>
-              <Link href="/home" className="text-white hover:text-gray-500 transition-colors">Organization</Link>
+              <Link href="/" className="text-white hover:text-blue-500 transition-colors">Home</Link>
+              <Link href="/home" className="text-white hover:text-blue-500 transition-colors">Forum</Link>
+              <Link href="/home" className="text-white hover:text-blue-500 transition-colors">Editor</Link>
+              <Link href="/home" className="text-white hover:text-blue-500 transition-colors">Dashboard</Link>
+              <Link href="/home" className="text-white hover:text-blue-500 transition-colors">Organization</Link>
             </div>
             <div>
               <Link 
@@ -57,7 +57,7 @@ export default function LandingPage(){
            
           >
             <Button className="px-6 py-3 border border-gray-600 bg-black text-white rounded-lg hover:bg-gray-950 transition-all">
-               Get Started →
+               Get Started &gt;
             </Button>
           </Link>
           <Link 
@@ -180,7 +180,7 @@ export default function LandingPage(){
             </div>
           </div>
           <div className="mt-10 pt-6 border-t border-gray-700 text-center text-gray-400">
-            <p>© {new Date().getFullYear()} NoteX. All rights reserved. <Link href={"github.com/mickey_360"} className="text-white font-semibold">By mickey_360</Link></p>
+            <p>© {new Date().getFullYear()} XBook. All rights reserved. <Link href={"github.com/mickey_360"} className="text-gray-400 font-semibold">by mickey_360</Link></p>
           </div>
         </div>
       </footer>

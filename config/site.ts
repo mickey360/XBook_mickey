@@ -1,4 +1,4 @@
 export const siteConfig = {
-    name: "NoteX",
+    name: "XBook",
     description: "Documents Reader",
 };

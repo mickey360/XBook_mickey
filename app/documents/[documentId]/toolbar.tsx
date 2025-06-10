@@ -30,7 +30,6 @@ import { cn } from "@/lib/utils";
 import { useEditorStore } from "@/store/use-editor-store";
 import { type ColorResult, SketchPicker } from "react-color";
 import { useState } from "react";
-import { Separator } from "@/Components/ui/separator";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -67,7 +66,7 @@ const ListButton = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <button className="h-7 min-w-7 shrink-0 flex items-center justify-center rounded-sm bg-gray-950 hover:bg-gray-800 px-1.5 overflow-hidden text-sm">
+        <button className="h-7 min-w-7 shrink-0 flex items-center justify-center rounded-sm border border-gray-600 focus:border-gray-500 hover:border-gray-500 px-1.5 overflow-hidden text-sm">
           <ListIcon color="white" className="size-4" />
         </button>
       </DropdownMenuTrigger>
@@ -119,7 +118,7 @@ const AlignButton = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <button className="h-7 min-w-7 shrink-0 flex items-center justify-center rounded-sm bg-gray-950 hover:bg-gray-800 px-1.5 overflow-hidden text-sm">
+        <button className="h-7 min-w-7 shrink-0 flex items-center justify-center rounded-sm border border-gray-600 focus:border-gray-500 hover:border-gray-500 px-1.5 overflow-hidden text-sm">
           <AlignLeftIcon color="white" className="size-4" />
         </button>
       </DropdownMenuTrigger>
@@ -181,7 +180,7 @@ const ImageButton = () => {
     <>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <button className="h-7 min-w-7 shrink-0 flex items-center justify-center rounded-sm bg-gray-950 hover:bg-gray-800 px-1.5 overflow-hidden text-sm">
+          <button className="h-7 min-w-7 shrink-0 flex items-center justify-center rounded-sm border border-gray-600 focus:border-gray-500 hover:border-gray-500 px-1.5 overflow-hidden text-sm">
             <ImageIcon color="white" className="size-4" />
           </button>
         </DropdownMenuTrigger>
@@ -207,7 +206,7 @@ const ImageButton = () => {
 
           <Input
             placeholder="Insert Image Url"
-            className=" bg-gray-900 text-gray-400 border-gray-800"
+            className=" bg-gray-900 text-gray-400 border border-gray-800"
             value={imageUrl}
             onChange={(e) => setImageUrl(e.target.value)}
             onKeyDown={(e) => {
@@ -217,7 +216,7 @@ const ImageButton = () => {
             }}
           />
           <DialogFooter>
-            <Button className="bg-gray-950 border-gray-800 hover:bg-gray-900" onClick={handleImageUrlSubmit}>Insert</Button>
+            <Button className="bg-gray-950 border border-gray-800 hover:bg-gray-900" onClick={handleImageUrlSubmit}>Insert</Button>
           </DialogFooter>
         </DialogContent>
       </Dialog>
@@ -243,7 +242,7 @@ const LinkButton = () => {
       }}
     >
       <DropdownMenuTrigger asChild>
-        <button className="h-7 min-w-7 shrink-0 flex items-center justify-center rounded-sm bg-gray-950 hover:bg-gray-800 px-1.5 overflow-hidden text-sm">
+        <button className="h-7 min-w-7 shrink-0 flex items-center justify-center rounded-sm border border-gray-600 focus:border-gray-500 hover:border-gray-500 px-1.5 overflow-hidden text-sm">
           <Link2Icon color="white" className="size-4" />
         </button>
       </DropdownMenuTrigger>
@@ -251,7 +250,7 @@ const LinkButton = () => {
       <DropdownMenuContent className="p-2.5 flex items-center bg-gray-950 border-gray-800 text-gray-200 focus:text-gray-200 gap-x-2">
         <Input
           placeholder="https://github/mickey_360.com"
-          className=" bg-gray-900 text-gray-400 border-gray-800"
+          className=" bg-gray-900 text-gray-400 border border-gray-800"
           value={value}
           onChange={(e) => setValue(e.target.value)}
         />
@@ -272,7 +271,7 @@ const HighlightColorButton = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <button className="h-7 min-w-7 shrink-0 flex items-center justify-center rounded-sm bg-gray-950 hover:bg-gray-800 px-1.5 overflow-hidden text-sm">
+        <button className="h-7 min-w-7 shrink-0 flex items-center justify-center rounded-sm border border-gray-600 focus:border-gray-500 hover:border-gray-500 px-1.5 overflow-hidden text-sm">
           <HighlighterIcon color='white' className="size-4" />
         </button>
       </DropdownMenuTrigger>
@@ -296,7 +295,7 @@ const TextColorButton = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <button className="h-7 min-w-7 shrink-0 flex items-center justify-center rounded-sm bg-gray-950 hover:bg-gray-800 px-1.5 overflow-hidden text-sm">
+        <button className="h-7 min-w-7 shrink-0 flex items-center justify-center rounded-sm border border-gray-600 focus:border-gray-500 hover:border-gray-500 px-1.5 overflow-hidden text-sm">
           <span className="text-xs text-white">A</span>
           <div className="h-0.5 w-full" style={{ backgroundColor: value }} />
         </button>
@@ -334,7 +333,7 @@ const HeadingLevelButton = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <button className="h-7 min-w-7 shrink-0 flex items-center justify-center rounded-sm bg-gray-950 hover:bg-gray-800 px-1.5 overflow-hidden text-sm">
+        <button className="h-7 min-w-7 shrink-0 flex items-center justify-center rounded-sm border border-gray-600 focus:border-gray-500 hover:border-gray-500 px-1.5 overflow-hidden text-sm">
           <span className="truncate text-gray-200">{getCurrentHeading()}</span>
           <ChevronDownIcon color="white" className="ml-2 size-4 shrink-0 " />
         </button>
@@ -387,7 +386,7 @@ const FontFamilyButton = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <button className="h-7 w-[120px] shrink-0 flex items-center justify-between rounded-sm bg-gray-950 hover:bg-gray-800 px-1.5 overflow-hidden text-sm">
+        <button className="h-7 w-[120px] shrink-0 flex items-center justify-between rounded-sm border border-gray-600 focus:border-gray-500 hover:border-gray-500 px-1.5 overflow-hidden text-sm">
           <span className="truncate text-gray-200">
             {editor?.getAttributes("textStyle").FontFamily || "Arial"}
           </span>
@@ -429,7 +428,7 @@ const ToolbarButton = ({
     <button
       onClick={onClick}
       className={cn(
-        "text-sm h-7 min-w-7 hover:bg-gray-900 bg-gray-950 flex items-center justify-center rounded-sm",
+        "text-sm h-7 min-w-7 border border-gray-600 focus:border-gray-500 hover:border-gray-500 flex items-center justify-center rounded-sm",
         isActive && "hover:bg-gray-700"
       )}
     >
@@ -517,20 +516,13 @@ export const Toolbar = () => {
   ];
 
   return (
-    <div className="px-2.5 py-0.5 bg-black border border-gray-800 rounded-[24px] min-h-[40px] flex items-center gap-x-0.5 overflow-x-auto print:hidden ">
+    <div className="px-2.5 py-0.5 bg-black border border-gray-700 rounded-[24px] min-h-[40px] flex items-center gap-x-0.5 overflow-x-auto print:hidden ">
       {sections[0].map((item) => (
         <ToolbarButton key={item.label} {...item} />
       ))}
 
-      <Separator orientation="vertical" className="h-6 bg-gray-700 " />
       <FontFamilyButton />
-      <Separator orientation="vertical" className="h-6 bg-gray-700 " />
       <HeadingLevelButton />
-
-      <Separator orientation="vertical" className="h-6 bg-gray-700 " />
-      {/* todo font size */}
-
-      <Separator orientation="vertical" className="h-6 bg-gray-700 " />
 
       {sections[1].map((item) => (
         <ToolbarButton key={item.label} {...item} />
@@ -539,7 +531,6 @@ export const Toolbar = () => {
       <TextColorButton  />
       <HighlightColorButton />
 
-      <Separator orientation="vertical" className="h-6 bg-gray-700 " />
       <LinkButton />
       <ImageButton />
       <AlignButton /> 

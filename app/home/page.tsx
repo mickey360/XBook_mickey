@@ -12,7 +12,7 @@ const Home = () => {
     const { results, status, loadMore } = usePaginatedQuery(api.documents.get, { search }, { initialNumItems: 5 });
 
     return ( 
-        <div className="min-h-screen flex flex-col">
+        <div className="min-h-screen flex flex-col bg-gradient-to-r from-black to-gray-950">
             <div className="fixed top-0 left-0 right-0 z-10 h-16 bg-gradient-to-r from-black to-gray-950">
                 <Navbar />
             </div>

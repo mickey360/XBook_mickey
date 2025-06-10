@@ -57,7 +57,7 @@ import { toast } from "sonner";
    const showError = status === "disconnected";
 
     return ( 
-        <div className="flex bg-black text-gray-200 items-center gap-2">
+        <div className="flex bg-gradient-to-l from-black to-gray-950 rounded-md text-gray-200 items-center gap-2">
          {isEditing ? (
             <form  onSubmit={handleSubmit} className="relative w-fit max-w-[50ch]">
                <span className="invisible whitespace-pre px-1.5 text-lg">
@@ -68,7 +68,7 @@ import { toast } from "sonner";
                value={value}
                onChange={onChange}
                onBlur={() => setIsEditing(false)}
-               className="absolute inset-0 text-lg bg-black text-gray-200 border border-gray-800 hover:bg-gray-900 px-1.5 truncate"
+               className="absolute inset-0 text-lg bg-gradient-to-r from-black to-gray-950 text-gray-200 border border-gray-800 hover:bg-gray-900 px-1.5 truncate"
                >
                </input>
             </form>
@@ -80,7 +80,7 @@ import { toast } from "sonner";
                   inputRef.current?.focus();
                }, 0);
             }} 
-            className="text-lg bg-black text-gray-200 border border-gray-800 hover:bg-gray-950 rounded-2xl px-1.5 cursor-pointer truncate"
+            className="text-lg bg-black text-gray-200 border border-gray-800 active:border-gray-800 hover:bg-gray-950 rounded-md px-1.5 cursor-pointer truncate"
              >
                {title}
             </span>

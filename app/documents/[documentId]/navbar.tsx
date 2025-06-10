@@ -65,12 +65,13 @@ export const Navbar = ({ data }: NavbarProps) => {
       });
   };
 
-  // const insertTable = ({ rows, cols}: { rows: number , cols: number }) => {
-  //     editor
-  //     ?.chain()
-  //     .focus()
-  //     .insertTable({ rows, cols, withHeaderRow: false})
-  // };
+  const insertTable = ({ rows, cols}: { rows: number , cols: number }) => {
+      editor
+      ?.chain()
+      .focus()
+      .insertTable({ rows, cols, withHeaderRow: false})
+      .run();
+  };
 
   const onDownload = (blob: Blob, filename: string) => {
     const url = URL.createObjectURL(blob);
@@ -112,17 +113,17 @@ export const Navbar = ({ data }: NavbarProps) => {
 
   return (
     <nav className="flex items-center bg-gradient-to-r from-black to-gray-950 justify-between h-full w-full print:hidden">
-      <div className="flex gap-2 items-center">
-        <Link href="/">
+      <div className="flex gap-2 ml-3 pl-3 mr-6 pr-6 items-center">
+        <Link href="/" >
           <Image src="/logo.svg" alt="logo" width={36} height={36} />
         </Link>
-        <div className="flex flex-col">
+        <div className="flex flex-col gap-2 ml-3 pl-3 ">
           <DocumentInput title={data.title} id={data._id} />
 
           <div className="flex">
-            <Menubar className="border-none bg-transparent shadow-none h-auto p-0">
+            <Menubar className="border-none gap-y-0.5 gap-x-1 bg-transparent shadow-none mt-1 pt-1 h-auto p-0">
               <MenubarMenu >
-                <MenubarTrigger className="text-sm font-normal py-0.5 px-[7px] rounded-sm focus:text-gray-300 data-[state=open]:bg-gray-900 data-[state=open]:text-gray-300 bg-gray-950 hover:bg-gray-900 text-gray-200 focus:bg-gray-900 h-auto ">
+                <MenubarTrigger className="text-sm font-normal py-0.5 px-[7px] gap-x-1 rounded-sm focus:text-gray-300 data-[state=open]:bg-gray-900 data-[state=open]:text-gray-300 border border-gray-800 focus:border-gray-600 hover:border-gray-600 text-gray-200 h-auto ">
                   File
                 </MenubarTrigger >
                 <MenubarContent className="bg-gray-950 border-gray-700">
@@ -174,13 +175,13 @@ export const Navbar = ({ data }: NavbarProps) => {
                   <MenubarSeparator className="bg-gray-800" />
                   <MenubarItem onClick={() => window.print()} className="bg-gray-950 focus:bg-gray-900 text-gray-200 focus:text-gray-200 ">
                     <PrinterIcon color="white" className="size-4 mr-2" />
-                    Print <MenubarShortcut className="text-gray-300">ctrl+P</MenubarShortcut>
+                    Print <MenubarShortcut className="text-gray-300">&nbsp;&nbsp;ctrl+P</MenubarShortcut>
                   </MenubarItem>
                 </MenubarContent>
               </MenubarMenu>
 
               <MenubarMenu>
-                <MenubarTrigger className="text-sm focus:text-gray-300 data-[state=open]:bg-gray-900 data-[state=open]:text-gray-300 bg-gray-950 hover:bg-gray-900 text-gray-200 focus:bg-gray-900 font-normal py-0.5 px-[7px] rounded-sm h-auto ">
+                <MenubarTrigger className="text-sm focus:text-gray-300 data-[state=open]:bg-gray-900 data-[state=open]:text-gray-300 border border-gray-800 focus:border-gray-600 hover:focus:border-gray-600 text-gray-200 font-normal py-0.5 px-[7px] gap-x-1 rounded-sm h-auto ">
                   Edit
                 </MenubarTrigger>
                 <MenubarContent className="bg-gray-950 border-gray-700">
@@ -189,20 +190,20 @@ export const Navbar = ({ data }: NavbarProps) => {
                     className="bg-gray-950 focus:bg-gray-900 text-gray-200 focus:text-gray-200"
                   >
                     <Undo2Icon color="white" className="size-4 mr-4" />
-                    Undo <MenubarShortcut className="text-gray-200">ctrl+Z</MenubarShortcut>
+                    Undo <MenubarShortcut className="text-gray-200">&nbsp;&nbsp;ctrl+Z</MenubarShortcut>
                   </MenubarItem>
                   <MenubarItem
                     onClick={() => editor?.chain().focus().redo().run()}
                     className="bg-gray-950 focus:bg-gray-900 text-gray-200 focus:text-gray-200"
                   >
                     <Redo2Icon color="white" className="size-4 mr-4" />
-                    Redo <MenubarShortcut className="text-gray-200">ctrl+Y</MenubarShortcut>
+                    Redo <MenubarShortcut className="text-gray-200">&nbsp;&nbsp;ctrl+Y</MenubarShortcut>
                   </MenubarItem>
                 </MenubarContent>
               </MenubarMenu>
 
               <MenubarMenu>
-                <MenubarTrigger className="text-sm focus:text-gray-300 data-[state=open]:bg-gray-900 data-[state=open]:text-gray-300 bg-gray-950 hover:bg-gray-900 text-gray-200 focus:bg-gray-900 font-normal py-0.5 px-[7px] rounded-sm h-auto ">
+                <MenubarTrigger className="text-sm focus:text-gray-300 data-[state=open]:bg-gray-900 data-[state=open]:text-gray-300 border border-gray-800 focus:border-gray-600 hover:focus:border-gray-600 text-gray-200 font-normal py-0.5 px-[7px] gap-x-1 rounded-sm h-auto ">
                   Insert
                 </MenubarTrigger>
                 <MenubarContent className="bg-gray-950 border-gray-700"> 
@@ -213,45 +214,25 @@ export const Navbar = ({ data }: NavbarProps) => {
                     <MenubarSubContent className="bg-gray-950 border-gray-700">
                       <MenubarItem
                         className="bg-gray-950 focus:bg-gray-900 text-gray-200 focus:text-gray-200"
-                        onClick={() =>
-                          editor
-                            ?.chain()
-                            .focus()
-                            .insertTable({ rows: 1, cols: 1 })
-                        }
+                        onClick={() => insertTable({ rows: 1, cols: 1 })}
                       >
                         1 x 1
                       </MenubarItem>
                       <MenubarItem
                       className="bg-gray-950 focus:bg-gray-900 text-gray-200 focus:text-gray-200"
-                        onClick={() =>
-                          editor
-                            ?.chain()
-                            .focus()
-                            .insertTable({ rows: 2, cols: 2 })
-                        }
+                        onClick={() => insertTable({ rows: 2, cols: 2 })}
                       >
                         2 x 2
                       </MenubarItem>
                       <MenubarItem
                       className="bg-gray-950 focus:bg-gray-900 text-gray-200 focus:text-gray-200"
-                        onClick={() =>
-                          editor
-                            ?.chain()
-                            .focus()
-                            .insertTable({ rows: 3, cols: 3 })
-                        }
+                        onClick={() => insertTable({ rows: 3, cols: 3 })}
                       >
                         3 x 3
                       </MenubarItem>
                       <MenubarItem
                       className="bg-gray-950 focus:bg-gray-900 text-gray-200 focus:text-gray-200"
-                        onClick={() =>
-                          editor
-                            ?.chain()
-                            .focus()
-                            .insertTable({ rows: 4, cols: 4 })
-                        }
+                        onClick={() => insertTable({ rows: 4, cols: 4 })}
                       >
                         4 x 4
                       </MenubarItem>
@@ -261,7 +242,7 @@ export const Navbar = ({ data }: NavbarProps) => {
               </MenubarMenu>
 
               <MenubarMenu>
-                <MenubarTrigger className="text-sm focus:text-gray-300 data-[state=open]:bg-gray-900 data-[state=open]:text-gray-300 bg-gray-950 hover:bg-gray-900 text-gray-200 focus:bg-gray-900 font-normal py-0.5 px-[7px] rounded-sm h-auto ">
+                <MenubarTrigger className="text-sm focus:text-gray-300 data-[state=open]:bg-gray-900 data-[state=open]:text-gray-300  text-gray-200 border border-gray-800 focus:border-gray-600 hover:focus:border-gray-600 font-normal py-0.5 px-[7px] gap-x-1 rounded-sm h-auto ">
                   Format
                 </MenubarTrigger>
                 <MenubarContent className="bg-gray-950 border-gray-700">
@@ -278,7 +259,7 @@ export const Navbar = ({ data }: NavbarProps) => {
                         }
                       >
                         <BoldIcon color="white" className="size-4 mr-2" />
-                        Bold <MenubarShortcut className="text-gray-200">ctrl+B</MenubarShortcut>
+                        Bold <MenubarShortcut className="text-gray-200">&nbsp;&nbsp;ctrl+B</MenubarShortcut>
                       </MenubarItem>
 
                       <MenubarItem
@@ -288,7 +269,7 @@ export const Navbar = ({ data }: NavbarProps) => {
                         }
                       >
                         <ItalicIcon color="white" className="size-4 mr-2" />
-                        Italic <MenubarShortcut className="text-gray-200">ctrl+I</MenubarShortcut>
+                        Italic <MenubarShortcut className="text-gray-200">&nbsp;&nbsp;ctrl+I</MenubarShortcut>
                       </MenubarItem>
                       <MenubarItem
                       className="bg-gray-950 focus:bg-gray-900 text-gray-200 focus:text-gray-200"
@@ -298,7 +279,7 @@ export const Navbar = ({ data }: NavbarProps) => {
                       >
                         <UnderlineIcon color="white" className="size-4 mr-2" />
                         <span>Underline&nbsp;&nbsp;</span>
-                        <MenubarShortcut className="text-gray-200">ctrl+U</MenubarShortcut>
+                        <MenubarShortcut className="text-gray-200">&nbsp;&nbsp;ctrl+U</MenubarShortcut>
                       </MenubarItem>
                       <MenubarItem
                       className="bg-gray-950 focus:bg-gray-900 text-gray-200 focus:text-gray-200"
@@ -307,7 +288,7 @@ export const Navbar = ({ data }: NavbarProps) => {
                         }
                       >
                         <StrikethroughIcon color="white" className="size-4 mr-2" />
-                        Strike <MenubarShortcut className="text-gray-200">ctrl+S</MenubarShortcut>
+                        Strike <MenubarShortcut className="text-gray-200">&nbsp;&nbsp;ctrl+S</MenubarShortcut>
                       </MenubarItem>
                     </MenubarSubContent>
                   </MenubarSub>
@@ -326,7 +307,7 @@ export const Navbar = ({ data }: NavbarProps) => {
           </div>
         </div>
       </div> 
-      <div className="flex gap-3 items-center h-10 pl-1 pr-1 mr-1 bg-gray-300 rounded-full">
+      <div className="hidden md:flex gap-3 items-center h-10 pl-1 pr-1 mr-1 bg-neutral-500 rounded-full">
         <Avatars />
         <Inbox />
         <OrganizationSwitcher

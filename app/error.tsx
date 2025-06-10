@@ -27,10 +27,10 @@ const ErrorPage = ({
         </div>
       </div>
       <div className="flex items-center gap-x-3">
-        <Button onClick={reset} className="font-medium bg-gray-950 hover:bg-gray-900 border-gray-800 text-gray-200 hover:text-gray-200 px-6">
+        <Button onClick={reset} className="font-medium bg-gray-950 hover:bg-gray-900 border border-gray-800 text-gray-200 hover:text-gray-200 px-6">
           Try again
         </Button>
-        <Button asChild variant="ghost" className="font-medium bg-black hover:bg-gray-900 border-gray-800 text-gray-200 hover:text-gray-200">
+        <Button asChild variant="ghost" className="font-medium bg-black hover:bg-gray-900 border border-gray-800 text-gray-200 hover:text-gray-200">
           <Link href="/">Go back</Link>
         </Button>
       </div>
